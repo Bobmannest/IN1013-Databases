@@ -1,5 +1,6 @@
 -- 1
-CREATE OR REPLACE VIEW samsBills AS SELECT first_name, surname, bill_date, cust_name, bill_total FROM restStaff, restBill;
+CREATE OR REPLACE VIEW samsBills AS SELECT first_name, surname, bill_date, cust_name, bill_total FROM restStaff JOIN restBill ON restStaff.staff_no = restBill.waiter_no WHERE first_name = "Sam" AND surname = "Pitt";
+SELECT * from samsBills;
 -- 2
 SELECT * FROM samsBills WHERE bill_total > 400;
 -- 3
